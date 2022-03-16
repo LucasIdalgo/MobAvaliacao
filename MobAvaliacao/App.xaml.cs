@@ -10,7 +10,26 @@ namespace MobAvaliacao
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
+        }
+
+        /*public static class Globais
+        {
+            public static ModelConfiguracao _configuracao = new ModelConfiguracao();
+        }*/
+
+        public static string dbName;
+        public static string dbPath;
+
+        public App(string dbpath, string dbname)
+        {
+            //linceça syncfusion
+            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("@31392e342e30Sv6CJTxjhjLq6NCnQMjTEoQiMfQM+1aUrWggYKjBO3E=");
+            InitializeComponent();
+            dbName = dbname;
+            dbPath = dbpath;
+
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
