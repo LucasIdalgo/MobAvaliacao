@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using MobAvaliacao.iOS.Controll;
 using UIKit;
 
 namespace MobAvaliacao.iOS
@@ -22,8 +23,16 @@ namespace MobAvaliacao.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            //linceça syncfusion
+            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("@31392e342e30Sv6CJTxjhjLq6NCnQMjTEoQiMfQM+1aUrWggYKjBO3E=");
+
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            string dbName = "dbMobAvaliacao.db3";
+            string dbPath = FileAccessHelper.GetLocalFilePath(dbName);
+
+            // LoadApplication(new App());
+            LoadApplication(new App(dbPath, dbName));
 
             return base.FinishedLaunching(app, options);
         }

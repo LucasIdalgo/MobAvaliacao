@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using MobAvaliacao.Droid.Controll;
 
 namespace MobAvaliacao.Droid
 {
@@ -12,11 +13,19 @@ namespace MobAvaliacao.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //linceça syncfusion
+            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("@31392e342e30Sv6CJTxjhjLq6NCnQMjTEoQiMfQM+1aUrWggYKjBO3E=");
+
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            string dbName = "dbMobAvaliacao.db3";
+            string dbPath = FileAccessHelper.GetLocalFilePath(dbName);
+
+            //LoadApplication(new App());
+            LoadApplication(new App(dbPath, dbName));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

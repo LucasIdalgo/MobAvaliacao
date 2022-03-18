@@ -63,6 +63,11 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controll\EntryBorderlessRenderer.cs" />
+    <Compile Include="Controll\FileAccessHelper.cs" />
+    <Compile Include="Controll\MessageiOS.cs" />
+    <Compile Include="Controll\PreviewControllerDS.cs" />
+    <Compile Include="Controll\SaveIOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -134,6 +139,51 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controll\" />
+    <BundleResource Include="Resources\sobrelight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\compartilhar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fitametrica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mododark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\modolight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\novoaluno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\relatorio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sairlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sobre.png" />
   </ItemGroup>
 </Project>
