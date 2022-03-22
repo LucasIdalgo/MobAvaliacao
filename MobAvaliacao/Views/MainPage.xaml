@@ -1,24 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobAvaliacao.MainPage">
+             xmlns:beahaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
+             x:Class="MobAvaliacao.MainPage"
+             Title="Login"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+    <StackLayout Margin="0,60,0,0">
+        <StackLayout Padding="20" VerticalOptions="Center">
+            <Label Text="Email" FontSize="Medium" Padding="0,10,0,0" TextColor="{DynamicResource PrimaryTextColor}" FontAttributes="Bold"/>
+            <Entry x:Name="txtEmail" Placeholder="Insira seu email" FontSize="Medium" Keyboard="Email" Style="{StaticResource EntryStyle}">
+                <Entry.Behaviors>
+                    <beahaviorPack:EmailValidationBehavior/>
+                </Entry.Behaviors>
+            </Entry>
+            <Label Text="Senha" FontSize="Medium" Padding="0,10,0,0" TextColor="{DynamicResource PrimaryTextColor}" FontAttributes="Bold"/>
+            <Entry x:Name="txtSenha" Placeholder="Insira sua senha" FontSize="Medium" IsPassword="True" Style="{StaticResource EntryStyle}"/>
+        </StackLayout>
+        <Grid Padding="20,0,20,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnCadastrar" Text="Cadastrar" Grid.Column="0" CornerRadius="50" Style="{StaticResource ButtonStyle}" Clicked="BtnCadastrar_Clicked"/>
+            <Button x:Name="btnEntrar" Text="Entrar" Grid.Column="1" CornerRadius="50" Style="{StaticResource ButtonStyle}" Clicked="BtnEntrar_Clicked"/>
+        </Grid>
+        <!--<StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="Center">
+            <Label Text="Manter conectado?" FontSize="Medium" Padding="0,3,0,0" TextColor="{DynamicResource PrimaryTextColor}" HorizontalOptions="Start"/>
+            <CheckBox x:Name="ckbManterLogado" HorizontalOptions="End" IsChecked="False" CheckedChanged="ManterLogado_CheckedChanged"/>
+        </StackLayout>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="0,5,0,0">
+            <Button x:Name="btnRecuperarSenha" Text="Esqueci minha senha" CornerRadius="50" Style="{StaticResource ButtonStyle}" WidthRequest="200"/>
+            <Button x:Name="btnEntrarGoogle" Text="Entrar com Google" FontAttributes="Bold" BackgroundColor="#db4a39" TextColor="#FFF" WidthRequest="200"/>
+            <Button x:Name="btnEntrarFb" Text="Entrar com Facebook" FontAttributes="Bold" BackgroundColor="#3b5998" TextColor="#FFF" WidthRequest="200"/>
+        </StackLayout>-->
     </StackLayout>
 
 </ContentPage>
